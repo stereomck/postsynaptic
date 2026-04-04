@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostSynaptic — build it. break it. ship it anyway.</title>
+  <meta name="description" content="Technical build log by Michael Kent. Real projects, real repos, real post-mortems. C#/.NET, Azure, MCP, agents, and whatever ships next.">
+  <meta name="author" content="Michael Kent">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="PostSynaptic">
+  <meta property="og:description" content="build it. break it. ship it anyway.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://postsynaptic.dev">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://postsynaptic.dev">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="PostSynaptic" href="/feed.xml">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="/" class="site-logo">
+        Post<span class="accent">Synaptic</span>
+        <span class="shortcode">PS://</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/" class="active">Posts</a>
+        <a href="/about.html">About</a>
+        <a href="https://youtube.com/@postsynaptic" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://contextwindow.dev" target="_blank" rel="noopener">Context Window</a>
+        <a href="https://github.com/stereomck" target="_blank" rel="noopener" class="nav-cta">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── Main ───────────────────────────────────────────── -->
+  <main class="page-wrapper">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-kicker">Technical build log</div>
+      <h1 class="hero-title">
+        build it. break it.<br>
+        <em>ship it anyway.</em>
+      </h1>
+      <p class="hero-sub">
+        Real projects, real repos, real post-mortems. The code behind the concepts &mdash;
+        C#/.NET, Azure, MCP servers, agent frameworks, and whatever ships next.
+      </p>
+      <div class="hero-meta">
+        <span class="hero-meta-item"><span class="dot"></span> Weekly builds</span>
+        <span class="hero-meta-item"><span class="dot"></span> Open source</span>
+        <span class="hero-meta-item"><span class="dot"></span> Show the code</span>
+        <span class="hero-meta-item"><span class="dot"></span> Talk about what broke</span>
+      </div>
+    </section>
+
+    <!-- Post list -->
+    <section>
+      <div class="post-list-header">
+        <span class="post-list-title">All posts</span>
+        <span class="post-list-count"><!-- POST_COUNT --> posts</span>
+      </div>
+
+      <div class="post-list">
+
+        <!-- ── POST ENTRIES — add newest at top ──────────────
+             Copy a .post-item block for each new post.
+             Update: href, date, year, tags, title, excerpt.
+             ─────────────────────────────────────────────── -->
+
+        <a class="post-item" href="posts/launch-stack-tour.html">
+          <div class="post-item-date">
+            Apr 04
+            <span class="year">2026</span>
+          </div>
+          <div class="post-item-body">
+            <div class="post-item-tags">
+              <span class="post-tag">launch</span>
+              <span class="post-tag">stack</span>
+            </div>
+            <div class="post-item-title">Channel Launch &mdash; The Stack Tour</div>
+            <div class="post-item-excerpt">
+              What I build with, why I picked it, and what this channel is about. A full walkthrough of the production stack behind PostSynaptic &mdash; from C#/.NET and Azure to MCP servers and home lab Kubernetes.
+            </div>
+          </div>
+        </a>
+
+        <!-- Add future posts above this comment -->
+
+      </div>
+    </section>
+
+    <!-- GitHub strip -->
+    <section class="newsletter-strip">
+      <div class="newsletter-kicker">Open Source &middot; Weekly</div>
+      <h2 class="newsletter-title">$ git clone the builds.</h2>
+      <p class="newsletter-sub">
+        Every project on this channel ships with a repo. Star them, fork them, break them, fix them. That's the point.
+      </p>
+      <form class="newsletter-form" action="https://github.com/stereomck" method="get" target="_blank">
+        <button type="submit" style="width:auto;">View on GitHub</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <a href="/" class="footer-logo">Post<span>Synaptic</span></a>
+      <div class="footer-links">
+        <a href="https://youtube.com/@postsynaptic" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://contextwindow.dev" target="_blank" rel="noopener">Context Window</a>
+        <a href="https://github.com/stereomck" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/michael-kent" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="/feed.xml">RSS</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Michael Kent &mdash; postsynaptic.dev
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

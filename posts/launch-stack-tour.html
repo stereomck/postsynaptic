@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Channel Launch — The Stack Tour — PostSynaptic</title>
+  <meta name="description" content="What I build with, why I picked it, and what this channel is about. A full walkthrough of the production stack behind PostSynaptic.">
+  <meta name="author" content="Michael Kent">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Channel Launch — The Stack Tour">
+  <meta property="og:description" content="What I build with, why I picked it, and what this channel is about.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://postsynaptic.dev/posts/launch-stack-tour.html">
+  <meta property="article:published_time" content="2026-04-04">
+
+  <link rel="canonical" href="https://postsynaptic.dev/posts/launch-stack-tour.html">
+  <link rel="alternate" type="application/rss+xml" title="PostSynaptic" href="/feed.xml">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="/" class="site-logo">
+        Post<span class="accent">Synaptic</span>
+        <span class="shortcode">PS://</span>
+      </a>
+      <nav class="site-nav">
+        <a href="/">Posts</a>
+        <a href="/about.html">About</a>
+        <a href="https://youtube.com/@postsynaptic" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://contextwindow.dev" target="_blank" rel="noopener">Context Window</a>
+        <a href="https://github.com/stereomck" target="_blank" rel="noopener" class="nav-cta">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── Article ────────────────────────────────────────── -->
+  <main class="page-wrapper">
+    <article>
+
+      <header class="post-header">
+        <div class="post-item-tags">
+          <span class="post-tag">launch</span>
+          <span class="post-tag">stack</span>
+        </div>
+        <h1 class="post-title">Channel Launch &mdash; The Stack Tour</h1>
+        <div class="post-meta">
+          <span class="post-meta-item">Michael Kent</span>
+          <span class="post-meta-sep"></span>
+          <span class="post-meta-item">April 4, 2026</span>
+          <span class="post-meta-sep"></span>
+          <span class="post-meta-item">12 min read</span>
+          <span class="post-meta-sep"></span>
+          <a class="post-meta-item" style="color:var(--signal);text-decoration:none;" href="https://youtube.com/watch?v=PLACEHOLDER" target="_blank" rel="noopener">&#9654; Watch on YouTube</a>
+        </div>
+      </header>
+
+      <div class="post-body">
+
+        <p>This is PostSynaptic. A technical build log &mdash; real projects, real repos, real post-mortems. No sanitized tutorials. No &ldquo;build a todo app&rdquo; content. The actual systems I build in production, the decisions behind them, and what broke along the way.</p>
+
+        <p>This first post is the stack tour. What I build with, why I picked it, and what you can expect from this channel going forward.</p>
+
+        <hr>
+
+        <h2>The core stack</h2>
+
+        <h3>C# / .NET</h3>
+
+        <p>This is home base. I&rsquo;ve been writing C# for years &mdash; production services, desktop apps, automation tools, and now AI-integrated systems. .NET 8+ is where most of my server-side code lives. It&rsquo;s fast, it&rsquo;s typed, it&rsquo;s boring in the best way. When I need something to not break at 3am, it&rsquo;s C#.</p>
+
+        <p>You&rsquo;ll see a lot of C# on this channel. MCP servers, RAG pipelines, API integrations, data processing &mdash; all in C#. If you&rsquo;re in the &ldquo;Python is the only AI language&rdquo; camp, stick around. You might change your mind.</p>
+
+        <h3>PowerShell</h3>
+
+        <p>The glue. PowerShell ties everything together &mdash; deployment scripts, Azure resource management, CI/CD pipelines, data wrangling. It&rsquo;s not glamorous, but when you need to automate a 47-step cloud deployment and actually understand what&rsquo;s happening at each step, PowerShell is unbeatable.</p>
+
+        <h3>Azure</h3>
+
+        <p>My cloud platform. Azure AI Search for vector + keyword hybrid retrieval. Azure OpenAI for model access with enterprise controls. Azure Container Apps and AKS for running services. Key Vault, App Configuration, the whole ecosystem.</p>
+
+        <p>I know AWS and GCP exist. I chose Azure because the .NET integration is first-class and because the AI services (especially Azure AI Search) are production-ready in ways that matter when you&rsquo;re building real systems, not demos.</p>
+
+        <h2>The AI layer</h2>
+
+        <h3>MCP servers</h3>
+
+        <p>Model Context Protocol is how I give LLMs access to tools and data. I build MCP servers in C# that connect to databases, APIs, file systems &mdash; whatever the model needs to do its job. This is the connective tissue between &ldquo;AI that answers questions&rdquo; and &ldquo;AI that does things.&rdquo;</p>
+
+        <p>Week 2 of this channel is a full walkthrough of building an MCP server from scratch in C#. Not a wrapper around someone else&rsquo;s SDK. The actual protocol implementation.</p>
+
+        <h3>RAG pipelines</h3>
+
+        <p>Retrieval-Augmented Generation &mdash; giving models access to your data at inference time instead of fine-tuning it in. I build these with Azure AI Search as the retrieval layer and Azure OpenAI for generation. Chunking strategies, embedding models, hybrid search, reranking &mdash; the whole pipeline.</p>
+
+        <p>Most RAG tutorials show you the happy path. I&rsquo;ll show you the failure modes: when chunking destroys context, when embeddings miss semantic similarity, when the reranker confidently ranks garbage at the top.</p>
+
+        <h3>Agent frameworks</h3>
+
+        <p>Multi-step AI systems that use tools, make decisions, and chain operations together. I&rsquo;m building these in C# with custom orchestration &mdash; not just wrapping LangChain. The goal is agents that are debuggable, testable, and don&rsquo;t cost $40 per run because they&rsquo;re stuck in a loop.</p>
+
+        <h3>vLLM</h3>
+
+        <p>Self-hosted model inference. When you need to run open-weight models without sending data to a third party, vLLM is the inference engine. I run this on my home lab for experimentation and on cloud GPUs for production workloads.</p>
+
+        <h2>The infrastructure</h2>
+
+        <h3>Kubernetes</h3>
+
+        <p>I run a home lab Kubernetes cluster for development and testing. Three nodes, nothing fancy, but enough to run real workloads and learn the hard lessons about networking, storage, and why your pod keeps crashing at 2am.</p>
+
+        <h3>GitHub Actions</h3>
+
+        <p>CI/CD for everything. Build, test, deploy, evaluate. I&rsquo;m building eval pipelines that run as GitHub Actions &mdash; every PR gets an automated quality check against a test dataset before it can merge.</p>
+
+        <h3>n8n</h3>
+
+        <p>Workflow automation. When I need to chain together APIs, process webhooks, or build a pipeline that isn&rsquo;t worth writing a full service for, n8n is the tool. Self-hosted, open source, and surprisingly powerful when combined with Claude API calls.</p>
+
+        <h2>The automation layer</h2>
+
+        <h3>WPF / UIA3</h3>
+
+        <p>Windows desktop automation using UI Automation 3. When there&rsquo;s no API and the only interface is a GUI, UIA3 lets you drive it programmatically. I use this for testing desktop applications and for automating workflows that can&rsquo;t be automated any other way.</p>
+
+        <p>This is niche. I know. But if you&rsquo;ve ever needed to automate a legacy Windows application that hasn&rsquo;t been updated since 2014, you&rsquo;ll appreciate it.</p>
+
+        <h2>What&rsquo;s coming</h2>
+
+        <p>Here&rsquo;s the roadmap for the first few weeks:</p>
+
+        <ul>
+          <li><strong>Week 2:</strong> Building an MCP server in C# from scratch</li>
+          <li><strong>Week 3:</strong> Azure AI Search + OpenAI hybrid RAG pipeline</li>
+          <li><strong>Week 4:</strong> PowerShell + Azure CLI automation toolkit</li>
+          <li><strong>Week 5:</strong> CI/CD eval pipeline with GitHub Actions</li>
+          <li><strong>Week 6:</strong> Kubernetes home lab setup and lessons</li>
+        </ul>
+
+        <p>Every post has a repo. Every video walks through the build. I show the code, explain the tradeoffs, and talk about what broke.</p>
+
+        <blockquote>
+          Ideas are cheap. Shipped code is the signal.
+        </blockquote>
+
+        <p>Subscribe if you build things. Let&rsquo;s go.</p>
+
+      </div>
+
+      <footer class="post-footer">
+        <a href="/" class="post-back">&larr; All posts</a>
+        <div class="post-channel-links">
+          <a href="https://contextwindow.dev" target="_blank" rel="noopener">Context Window &rarr;</a>
+          <a href="https://github.com/stereomck" target="_blank" rel="noopener">GitHub &rarr;</a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <a href="/" class="footer-logo">Post<span>Synaptic</span></a>
+      <div class="footer-links">
+        <a href="https://youtube.com/@postsynaptic" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://contextwindow.dev" target="_blank" rel="noopener">Context Window</a>
+        <a href="https://github.com/stereomck" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/michael-kent" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="/feed.xml">RSS</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Michael Kent &mdash; postsynaptic.dev
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
