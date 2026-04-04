@@ -216,7 +216,7 @@ When asking Claude to generate a new post, it will use this structure. You don't
       <footer class="post-footer">
         <a href="/" class="post-back">← All posts</a>
         <div class="post-channel-links">
-          <a href="https://contextwindow.dev">Context Window →</a>
+          <a href="https://contextwindow.to">Context Window →</a>
           <a href="https://github.com/stereomck">GitHub →</a>
         </div>
       </footer>
