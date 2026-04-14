@@ -3,7 +3,7 @@
   <channel>
     <title>PostSynaptic</title>
     <link>https://postsynaptic.dev</link>
-    <description>build it. break it. ship it anyway. Technical build log by Michael Kent.</description>
+    <description>build it. break it. fix it. ship it. Technical build log by Michael Kent.</description>
     <language>en-us</language>
     <author>Michael Kent</author>
     <atom:link href="https://postsynaptic.dev/feed.xml" rel="self" type="application/rss+xml"/>
